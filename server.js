@@ -1,10 +1,14 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+const path = require('path');
 
-// Set view engine ke EJS
+// Setting agar Vercel tahu persis di mana folder views berada
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(express.static('public'));
+
+// Setting agar folder public (CSS/Gambar) terbaca
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Data Diri Bintang
 const portfolioData = {
