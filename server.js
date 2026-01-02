@@ -61,3 +61,4 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Portfolio Bintang berjalan di http://localhost:${port}`);
 });
+module.exports = app;
